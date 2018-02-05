@@ -1,0 +1,76 @@
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+input:focus,
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4db6ac!important;
+  -webkit-box-shadow: 0 1px 0 0 #4db6ac!important;
+  box-shadow: 0 1px 0 0 #4db6ac!important;
+}
+input:focus + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #4db6ac!important;
+}
+input[type=checkbox]:focus {
+  border-bottom: 1px solid #4db6ac!important;
+  -webkit-box-shadow: 0 1px 0 0 #4db6ac!important;
+  box-shadow: 0 1px 0 0 #4db6ac!important;
+}
+input[type=checkbox]:focus + label {
+  color: #9e9e9e!important;
+}
+.no-padding {
+  padding: 0;
+}
+.login-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.login-bg .wrapper {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 310px;
+  top: 50%;
+  left: 50%;
+}
+.login-bg .wrapper form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.login-bg .wrapper form .input-field {
+  width: 75%;
+}
+.login-bg .wrapper form button {
+  margin-top: 30px;
+}

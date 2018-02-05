@@ -1,0 +1,24 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "description": "API base architecture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Hugo Novais",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jwt-simple": "^0.5.1",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "require-dir": "^0.3.2",
+    "sequelize": "^4.31.0"
+  }
+}
