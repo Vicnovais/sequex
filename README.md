@@ -29,7 +29,7 @@ npm install
 
 ## Database
 - You may set up your own connection settings on this file: **'DAL/database.config.js'**
-  NOTE: If you have trouble, follow Sequelize.JS instructions accordingly with your chosen database
+- NOTE: If you have trouble, follow Sequelize.JS instructions accordingly with your chosen database
 - Run the following statements to build our schema in your MySQL instance:
 ```
 CREATE TABLE User (
