@@ -105,7 +105,7 @@ http://localhost:3000
   * Every controller must return an instance of BaseController.js file. This base controller has all the methods required by an API, such as get, getById, update, create, etc.
   * It's important to note that you can override the base controller's behavior. You can see this happening inside **TaskController.js**
   * If you need an extra action that does not exist inside the Base Controller, you need to pass an array as the last argument to the Base Controller, as seen in **TaskController.js**:
-  ```
+  ```javascript
   var TaskController = class TaskController extends BaseController { };
   var _TaskController = new TaskController('Task', 'task', Task.model, ['setDone']);
   ```
