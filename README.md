@@ -4,8 +4,6 @@
 
 Express based API made with Sequelize.JS as ORM and Passport.JS as authenticator.
 
-['contact-manager'](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/contact-manager-tutorial/1)
-
 ## Warning
 - This is a work in progress project, not recommended to be run at production
 
