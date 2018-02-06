@@ -110,15 +110,15 @@ http://localhost:3000
   var _TaskController = new TaskController('Task', 'task', Task.model, ['setDone']);
   ```
   
-  > Here we have a custom action named 'setDone', so your controller may register it. Consequently, the API engine will automatically build a POST route to this custom action (task/setDone):
+  * Here we have a custom action named 'setDone', so your controller may register it. Consequently, the API engine will automatically build a POST route to this custom action (task/setDone):
   
-  ```
+  ```javascript
   _TaskController.setDone = function (req, res) { ... }
   ```
   
   * If you want that your JSON response contains the model's association object, you need to override the get/getById methods and pass as last argument the sequelize's include configuration, as shown inside **TaskController.js** to retrieve the user associated to a task:
   
-  ```
+  ```javascript
   var oldGet = _TaskController.get;
   _TaskController.get = function (req, res, next) {
       oldGet.apply(_TaskController, [req, res, next, 
