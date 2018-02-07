@@ -66,7 +66,8 @@ http://localhost:3000
 
 - The authentication here is handled by Passport.JS (http://www.passportjs.org) with the JWT strategy.
 - To get the user token, there is an POST endpoint to /token, which is responsible to get the request body parameters (username and password), as show in the file 'app_start/auth.route.builder'.
-- To test the token service, you may use an API test app, like PostMan.
+- To test the authentication, you may use an API test app as shown below, or simply start the server and enter in localhost:3000, where you'll see a login page. You may see the available users to use as test at 'app_start/auth.route.builder'.
+- Using PostMan or any other API test app of your choice:
 - Example:
   > Open PostMan, select POST, and enter the URL http://localhost:3000/token, and set in the request body a JSON containing two parameters: (for the sake of simplicity, there is an user array fixed in the same file aforementioned, but you can easily switch to a database check)
     ```
