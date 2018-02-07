@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Painel MixMaster</title>
-        
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="format-detection" content="telephone=no"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-landscape.png" media="(orientation:landscape)" />
-        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-portrait.png" media="(orientation:portrait)" />
-        <link rel="apple-touch-icon" href="lib/durandal/img/icon.png"/>
-        
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="css/ie10mobile.css" />
-        <link rel="stylesheet" href="lib/materialize/css/materialize.min.css" />
-        <link rel="stylesheet" href="lib/jsgrid/jsgrid.min.css" />
-        <link rel="stylesheet" href="lib/jsgrid/jsgrid-theme.min.css" />
-        <link rel="stylesheet" href="lib/jqueryui/jquery-ui.css" />
-        <link rel="stylesheet" href="lib/jqueryui/jquery-ui.structure.min.css" />
-        <link rel="stylesheet" href="lib/jqueryui/jquery-ui.theme.min.css" />
-        <link rel="stylesheet" href="css/app.css" />
-        
-        
-        <script type="text/javascript">
-            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                var msViewportStyle = document.createElement("style");
-                var mq = "@@-ms-viewport{width:auto!important}";
-                msViewportStyle.appendChild(document.createTextNode(mq));
-                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-            }
-        </script>
-    </head>
-    <body>
-        <div id="applicationHost">
-            <div class="splash">
-                <div class="message">
-                    Painel MixMaster
-                </div>
-                <i class="fa fa-spinner fa-spin"></i>
-            </div>
-        </div>
 
-        <script src="lib/require/require.js" data-main="app/main"></script>
-    </body>
+<head>
+	<title>SEQUEX</title>
+	<meta charset="utf-8" />
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.centered {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 50%;
+		}
+
+		.centered span {
+			display: inline-block;
+			max-width: 100%;
+			;
+			word-wrap: break-word;
+		}
+
+		.centered #signout {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="centered">Logged In! Token:
+		<br>
+		<span id="token"></span>
+		<br><br>
+		<span id="signout">Click here to signout</span>
+	</div>
+
+	<script src="lib/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.get("/cookies", function (ret) {
+				$("#token").text(ret.auth);
+			});
+
+			$("#signout").click(function (e) {
+				$.post("/signout", {}, function (ret) {
+					document.write(ret);
+				});
+			});
+		});
+	</script>
+</body>
+
 </html>
